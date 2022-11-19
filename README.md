@@ -2,7 +2,7 @@
 
 This is a very simple proof of the concept of Infinite Scroll written in Vue.JS.
 
-As an ethernal source of random data we have used: [Random Users](https://randomuser.me/)
+As an ethernal source of random data we have used: [Random Data API](https://random-data-api.com/)
 
 ## Recommended IDE Setup
 
