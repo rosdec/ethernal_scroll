@@ -1,6 +1,8 @@
-# ethernal_scroll
+# Ethernal scroll of Random Users
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a very simple proof of the concept of Infinite Scroll written in Vue.JS.
+
+As an ethernal source of random data we have used: [Random Users](https://randomuser.me/)
 
 ## Recommended IDE Setup
 
