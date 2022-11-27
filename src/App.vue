@@ -2,8 +2,9 @@
   <main>
 
     <div class="heading">
-      <h1>Infinite Scroll</h1>
-      <h4>A simple infinite scroll example using Vue.js</h4>
+      <h1>Ethernal Scroll</h1>
+      <h2>A simple infinite scroll example using Vue.js</h2>
+      <h4>Pages loaded: {{ page_count }}</h4>
     </div>
 
     <div class="container" id="app">
@@ -11,7 +12,7 @@
       <div class="list-group-wrapper">
         <transition name="fade">
           <div class="loading" v-show="loading">
-            <span class="fa fa-spinner fa-spin"></span> Loading
+            <span class="fa fa-spinner fa-spin"></span> Loading next batch
           </div>
         </transition>
         <ul class="list-group" id="infinite-list">
@@ -31,7 +32,8 @@ export default {
   data() {
     return {
       loading: false,
-      items: []
+      items: [],
+      page_count: 0
     };
   },
   methods: {
@@ -44,6 +46,7 @@ export default {
           this.items.push(x.first_name + " " + x.last_name) 
         })
         this.loading = false;
+        this.page_count++;
       });
     }
   },
@@ -55,7 +58,7 @@ export default {
 
     listElm.addEventListener('scroll', e => {
       if (listElm.scrollTop + listElm.clientHeight >= listElm.scrollHeight) {
-        this.getNextBatch(2);
+        this.getNextBatch(30);
       }
     })
   },
