@@ -17,9 +17,9 @@
         </transition>
 
         <grid-item :class="item.size" v-for="item in items">
-          <p>Name: {{ item.name }}<br>
-            Date of birth: {{ item.dob }}<br>
-            Place of birth: {{ item.location }}</p>
+          <p><em>Name</em>: {{ item.name }}<br>
+            <em>Date of birth</em>: {{ item.dob }}<br>
+            <em>Place of birth</em>: {{ item.location }}</p>
         </grid-item>
       </grid-container>
     </div>
@@ -62,10 +62,10 @@ export default {
     this.getNextBatch(30);
   },
   mounted() {
-    const listElm = document.querySelector('#infinite-list');
+    const masonry = document.querySelector('#infinite-list');
 
-    listElm.addEventListener('scroll', e => {
-      if (listElm.scrollTop + listElm.clientHeight >= listElm.scrollHeight) {
+    masonry.addEventListener('scroll', e => {
+      if (masonry.scrollTop + masonry.clientHeight >= masonry.scrollHeight) {
         this.getNextBatch(30);
       }
     })
