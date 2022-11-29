@@ -64,6 +64,8 @@ export default {
   mounted() {
     const masonry = document.querySelector('#infinite-list');
 
+    document.title = "Ethrnal Scroll Demo";
+
     masonry.addEventListener('scroll', e => {
       if (masonry.scrollTop + masonry.clientHeight >= masonry.scrollHeight) {
         this.getNextBatch(30);
